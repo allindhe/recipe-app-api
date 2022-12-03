@@ -3,6 +3,13 @@
 import os
 import sys
 
+# If .env file exist
+try:
+    with open('./.env') as f:
+        os.environ.setdefault('DJANGO_SECRET_KEY', f.read().strip())
+except:
+    pass
+
 
 def main():
     """Run administrative tasks."""
