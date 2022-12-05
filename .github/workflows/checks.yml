@@ -19,7 +19,6 @@ jobs:
       - name: Test
         env:
           DJANGO_SECRET_KEY: ${{ secrets.DJANGO_KEY }}
-          HUB_AUTH_TOKEN: ${{ secrets.HUB_AUTH_TOKEN }}
         run: docker-compose run --rm app sh -c "python manage.py test"
       - name: Lint
         run: docker-compose run --rm app sh -c "flake8"
