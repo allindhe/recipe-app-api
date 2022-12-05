@@ -2,7 +2,6 @@ FROM python:3.9-alpine3.13
 LABEL maintainer="me"
 
 ENV PYTHONBUFFERED 1
-ENV DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY
 
 COPY ./requirements.txt /tmp/requirements.txt
 COPY ./requirements.dev.txt /tmp/requirements.dev.txt
