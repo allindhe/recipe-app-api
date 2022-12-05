@@ -2,12 +2,14 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from pathlib import Path
 
-# If .env file exist
+
+# If file exist
 try:
-    with open('./.env') as f:
-        os.environ.setdefault('DJANGO_SECRET_KEY', f.read().strip())
-except:
+    with open(Path(__file__).with_name('django_key.txt'), 'r') as f:
+        os.environ['DJANGO_SECRET_KEY'] = f.read().strip()
+except FileNotFoundError:
     pass
 
 
